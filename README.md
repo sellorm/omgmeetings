@@ -2,7 +2,7 @@
 
 Many of us spend far too much time in meetings.
 
-What if there was a how to track how much each meeting is costing your business?
+What if there was a way to track how much each meeting is costing your business?
 
 Well now there is!
 

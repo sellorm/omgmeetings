@@ -1,68 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style type="text/css">
-html {
-	background: #FFF;
-}
-body {
-	font-family: helvetica, arial, sans;
-	color: white;
-}
-a {
-	color: white;
-}
-#header {
-	color: white;
-	font-size: 20pt;
-	text-align: center;
-	background: transparent url(bg_square.png);
-	background: rgba(0, 0, 0, 0.5) none;
-	padding: 10px;
-	-moz-border-radius: 0px 0px 10px 10px;
-	-webkit-border-radius: 0px 0px 10px 10px;
-	border-radius: 0px 0px 10px 10px;
-	display: block;
-	width: 530px;
-	margin: -10 auto;
-}
-#output {
-	font-size: 140px;
-	color: white;
-	text-align: right;
-	border: none;
-	background: transparent url(bg_square.png);
-	background: rgba(0, 0, 0, 0.5) none;
-	padding: 25px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	display: block;
-	position: absolute;
-	top: 50%;
-	left:50%;
-	width: 550;
-	height: 200px;
-	margin: -100 0 0 -275;
-}
-#main {
-	color: white;
-	text-align: center;
-	background: transparent url(bg_square.png);
-	background: rgba(0, 0, 0, 0.5) none;
-	padding: 10px;
-	-moz-border-radius: 10px 10px 0px 0px;
-	-webkit-border-radius: 10px 10px 0px 0px;
-	border-radius: 10px 10px 0px 0px;
-	display: block;
-	position: absolute;
-	bottom: 0px;
-	left: 50%;
-	width: 530px;
-	height: 40px;
-	margin: 0 0 0 -275px;
-}
-</style>
-<script language="javascript">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  
+  <script language="javascript">
 <!--
 function reset(){
         document.dispRes.res.value=0;
@@ -81,22 +45,58 @@ setTimeout("display()",1000);
 }
 //-->
 </script>
+
+<style>
+  #output {
+	font-size: 8em;
+	border: none;
+	color: gray;
+	height: 1.2em;
+	
+}
+</style>
+
 </head>
 <body>
-<div id="header">
-The cost of your meeting...
-</div>
-<div id="outputArea">
-<form name="dispRes">
-<input id="output" type="text" size="8" name="res">
-</form>
-</div>
-<div id="main">
-Number of attendees: <input type="text" size=2 maxlength=2 id="numPpl" />
- Avg hourly rate: <input type="text" size=2 maxlength=2 id="cost" /><br />
-<a href=# onClick="display.opt = true; display()">Run</a>
-<a href=# onClick="display.opt = false;">Stop</a>
-<a href=# onClick="totalCost = 0; reset()">Reset</a>
-</div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+        <h4>OMG, Meetings!</h4>
+        <p>Many of us spend far too much time in meetings.</p>
+        <p>What if there was a how to track how much each meeting is costing your business?</p>
+        <p>Well now there is!</p>
+        <p>OMG Meetings is a simple tool that lets you track how much money you're <strike>wasting</strike> spending on your meetings.</p>
+        <p>Just add in the number of attendees, their average hourly salary, and hit 'start', and  watch in horror as the the cost racks up!</p>
+      </div>
+      <div class="one-half column" style="margin-top: 25%">
+        <div class="row">
+        <div id="msgArea"><strong>The cost of your meeting is...</strong></div>
+        <div id="outputArea">
+          <form name="dispRes">
+            <input id="output" type="text" size="8" name="res" value="0.00">
+          </form>
+        </div>
+        </div>
+    <div class="row">
+        Number of attendees: <input type="text" size=2 maxlength=2 id="numPpl" /><br />
+        Avg hourly rate: <input type="text" size=3 maxlength=3 id="cost" /><br />
+        <a href=# onClick="display.opt = true; display()">Start</a>
+        <a href=# onClick="display.opt = false;">Pause</a>
+        <a href=# onClick="totalCost = 0; reset()">Reset</a>
+    </div>
+      </div>
+    </div>
+    
+    
+
+    
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

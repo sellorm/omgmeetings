@@ -1,0 +1,102 @@
+<html>
+<head>
+<style type="text/css">
+html {
+	background: #FFF;
+}
+body {
+	font-family: helvetica, arial, sans;
+	color: white;
+}
+a {
+	color: white;
+}
+#header {
+	color: white;
+	font-size: 20pt;
+	text-align: center;
+	background: transparent url(bg_square.png);
+	background: rgba(0, 0, 0, 0.5) none;
+	padding: 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+	display: block;
+	width: 530px;
+	margin: -10 auto;
+}
+#output {
+	font-size: 140px;
+	color: white;
+	text-align: right;
+	border: none;
+	background: transparent url(bg_square.png);
+	background: rgba(0, 0, 0, 0.5) none;
+	padding: 25px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	width: 550;
+	height: 200px;
+	margin: -100 0 0 -275;
+}
+#main {
+	color: white;
+	text-align: center;
+	background: transparent url(bg_square.png);
+	background: rgba(0, 0, 0, 0.5) none;
+	padding: 10px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	width: 530px;
+	height: 40px;
+	margin: 0 0 0 -275px;
+}
+</style>
+<script language="javascript">
+<!--
+function reset(){
+        document.dispRes.res.value=0;
+        }
+var totalCost = 0;
+function display(){
+if (display.opt){
+var cost = parseInt(document.getElementById("cost").value) || 0;
+var numPpl = parseInt(document.getElementById("numPpl").value) || 0;
+var costPerSec = (numPpl * cost) / 3600;
+totalCost = totalCost + costPerSec;
+var roundedCost = Math.round(totalCost*Math.pow(10,2))/Math.pow(10,2);
+document.dispRes.res.value = roundedCost;
+setTimeout("display()",1000);
+}
+}
+//-->
+</script>
+</head>
+<body>
+<div id="header">
+The cost of your meeting...
+</div>
+<div id="outputArea">
+<form name="dispRes">
+<input id="output" type="text" size="8" name="res">
+</form>
+</div>
+<div id="main">
+Number of attendees: <input type="text" size=2 maxlength=2 id="numPpl" />
+ Avg hourly rate: <input type="text" size=2 maxlength=2 id="cost" /><br />
+<a href=# onClick="display.opt = true; display()">Run</a>
+<a href=# onClick="display.opt = false;">Stop</a>
+<a href=# onClick="totalCost = 0; reset()">Reset</a>
+</div>
+</body>
+</html>
